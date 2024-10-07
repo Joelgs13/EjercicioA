@@ -1,11 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ListView?>
 <?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -16,7 +18,7 @@
 
 <VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.ejercicioa.ejercicioAController">
    <children>
-      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="70.0" prefWidth="601.0" text="ENCUESTAS" textAlignment="CENTER">
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="35.0" prefWidth="600.0" text="ENCUESTAS" textAlignment="CENTER">
          <font>
             <Font size="35.0" />
          </font>
@@ -91,6 +93,42 @@
                   <ListView fx:id="SportList" disable="true" prefHeight="77.0" prefWidth="283.0" />
                </children>
             </VBox>
+         </children>
+      </GridPane>
+      <Label alignment="CENTER" contentDisplay="CENTER" prefHeight="18.0" prefWidth="642.0" text="Marque del 1 al 10 su grado de aficcion">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <HBox prefHeight="59.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="78.0" text="Compras:" />
+            <Slider majorTickUnit="1.0" max="10.0" prefHeight="14.0" prefWidth="505.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="56.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="78.0" text="Television:" />
+            <Slider majorTickUnit="1.0" max="10.0" prefHeight="14.0" prefWidth="505.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+         </children>
+      </HBox>
+      <HBox prefHeight="56.0" prefWidth="600.0">
+         <children>
+            <Label prefHeight="18.0" prefWidth="78.0" text="Ir al cine:" />
+            <Slider majorTickUnit="1.0" max="10.0" prefHeight="14.0" prefWidth="505.0" showTickLabels="true" showTickMarks="true" value="5.0" />
+         </children>
+      </HBox>
+      <GridPane>
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+          <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Button mnemonicParsing="false" text="Button" GridPane.halignment="CENTER" GridPane.valignment="CENTER" />
+            <Button mnemonicParsing="false" text="Button" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
          </children>
       </GridPane>
    </children>
