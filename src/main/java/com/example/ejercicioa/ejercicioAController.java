@@ -6,6 +6,13 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.stage.Stage;
 
+/**
+ * Controlador de la interfaz de encuestas que gestiona la interacción
+ * con los elementos de la vista. Permite al usuario ingresar datos como
+ * profesión, número de hermanos, deportes y calificaciones de ciertas
+ * actividades, y valida los datos antes de mostrarlos o generar mensajes
+ * de error si los datos son incorrectos.
+ */
 public class ejercicioAController {
 
     @FXML
@@ -38,6 +45,11 @@ public class ejercicioAController {
     @FXML
     private Button btn_cancelar;
 
+    /**
+     * Inicializa los componentes de la vista, como el ComboBox de edad, la lista
+     * de deportes y deshabilita la lista de deportes si el CheckBox "¿Practica algún deporte?"
+     * no está seleccionado.
+     */
     @FXML
     public void initialize() {
         ObservableList<String> edades = FXCollections.observableArrayList(
@@ -56,16 +68,23 @@ public class ejercicioAController {
         SportList.setTooltip(new Tooltip("deporte preferido si practica alguno de los siguientes"));
     }
 
+    /**
+     * Habilita o deshabilita la lista de deportes según si el CheckBox "¿Practica algún deporte?"
+     * está seleccionado o no.
+     */
     @FXML
     private void habilitaLista() {
         SportList.setDisable(!chk_practica.isSelected());
     }
 
+    /**
+     * Valida los datos ingresados por el usuario, asegurándose de que los campos requeridos estén
+     * completos y correctos. Si hay errores, se muestran en una alerta; si no hay errores,
+     * se muestra un resumen de los datos ingresados. ambos en ventanas emergentes
+     */
     @FXML
     private void validarYMostrarDatos() {
         StringBuilder errores = new StringBuilder();
-
-        //VA AÑADIENDO TROZOS DE CADENA CORRESPONDIENTE A LOS ERRORES ENCONTRADOS
 
         String profesion = tf_profesion.getText().trim();
         if (profesion.isEmpty()) {
@@ -86,7 +105,7 @@ public class ejercicioAController {
         if (chk_practica.isSelected() && SportList.getSelectionModel().isEmpty()) {
             errores.append("Debido que marcó que practica algun deporte, marque tambien su deporte favorito.\n");
         }
-        //si hay errores muestra error
+
         if (errores.length() > 0) {
             mostrarError(errores.toString());
             return;
@@ -104,6 +123,12 @@ public class ejercicioAController {
         mostrarInformacion("Datos ingresados correctamente", mensaje);
     }
 
+    /**
+     * Muestra un mensaje de error en una ventana emergente si los datos ingresados
+     * no son correctos u estan vacios
+     *
+     * @param mensaje El mensaje de error a mostrar.
+     */
     private void mostrarError(String mensaje) {
         Alert alert = new Alert(Alert.AlertType.ERROR);
         alert.setTitle("Error en los datos");
@@ -112,6 +137,13 @@ public class ejercicioAController {
         alert.showAndWait();
     }
 
+    /**
+     * Muestra un mensaje de información en una ventana emergente si los datos ingresados
+     * son válidos y correctos, primero comprobando la anterior pantalla
+     *
+     * @param titulo El título de la alerta informativa.
+     * @param mensaje El mensaje a mostrar en la alerta.
+     */
     private void mostrarInformacion(String titulo, String mensaje) {
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
         alert.setTitle(titulo);
@@ -120,6 +152,9 @@ public class ejercicioAController {
         alert.showAndWait();
     }
 
+    /**
+     * Cierra la aplicación cuando se hace clic en cancelar
+     */
     @FXML
     private void cerrarAplicacion() {
         Stage stage = (Stage) btn_cancelar.getScene().getWindow();
