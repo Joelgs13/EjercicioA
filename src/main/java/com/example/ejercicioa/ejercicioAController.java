@@ -15,33 +15,68 @@ import javafx.stage.Stage;
  */
 public class ejercicioAController {
 
+    /**
+     * El ListView que muestra una lista de deportes para que el usuario seleccione.
+     */
     @FXML
     private ListView<String> SportList;
 
+    /**
+     * El ComboBox que permite al usuario seleccionar su grupo de edad.
+     */
     @FXML
     private ComboBox<String> cb_edad;
 
+    /**
+     * El CheckBox que permite al usuario indicar si practica deportes.
+     */
     @FXML
     private CheckBox chk_practica;
 
+    /**
+     * El TextField que acepta la profesión del usuario como entrada.
+     */
     @FXML
     private TextField tf_profesion;
 
+    /**
+     * El TextField que acepta el número de hermanos que tiene el usuario.
+     */
     @FXML
     private TextField tf_Nhermanos;
 
+    /**
+     * El Slider que representa el gasto del usuario en compras.
+     * El control deslizante permite al usuario seleccionar un valor dentro de un rango especificado.
+     */
     @FXML
     private Slider sldr_compras;
 
+    /**
+     * El Slider que representa el tiempo que el usuario pasa viendo televisión.
+     * El control deslizante permite al usuario seleccionar un valor dentro de un rango especificado.
+     */
     @FXML
     private Slider sldr_television;
 
+    /**
+     * El Slider que representa el tiempo que el usuario pasa viendo cine en la sala de cine.
+     * El control deslizante permite al usuario seleccionar un valor dentro de un rango especificado.
+     */
     @FXML
     private Slider sldr_cine;
 
+    /**
+     * El Botón que activa la acción de "aceptar" cuando se hace clic en él.
+     * Procesa la entrada del usuario desde los diferentes componentes de la interfaz de usuario.
+     */
     @FXML
     private Button btn_aceptar;
 
+    /**
+     * El Botón que activa la acción de "cancelar" cuando se hace clic en él.
+     * Resetea el formulario o cierra la ventana actual.
+     */
     @FXML
     private Button btn_cancelar;
 
