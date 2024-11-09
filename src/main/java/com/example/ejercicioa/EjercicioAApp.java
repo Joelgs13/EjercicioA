@@ -12,7 +12,7 @@ import java.io.IOException;
  * Se encarga de cargar y mostrar la interfaz de usuario definida en el archivo FXML "ejercicioA.fxml".
  * También configura la ventana principal de la aplicación, como el tamaño mínimo y el título.
  */
-public class HelloApplication extends Application {
+public class EjercicioAApp extends Application {
 
     /**
      * El metodo `start` es el punto de entrada para la ejecución de la aplicación JavaFX.
@@ -24,7 +24,7 @@ public class HelloApplication extends Application {
      */
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("ejercicioA.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(EjercicioAApp.class.getResource("ejercicioA.fxml"));
         Scene scene = new Scene(fxmlLoader.load(), 610, 520);
         stage.setMinHeight(500);
         stage.setMinWidth(600);
